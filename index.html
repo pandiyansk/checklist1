@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Electrical Inspection Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Smart Electrical Inspection System</h1>
+            <p class="subtitle">Manage Multiple House Electrical Inspections</p>
+        </header>
+        
+        <div class="house-management">
+            <div class="add-house-section">
+                <h2>Add New House</h2>
+                <div class="input-group">
+                    <input type="text" id="newHouseNumber" placeholder="Enter house number/name" />
+                    <button id="addHouseBtn" class="primary-btn">+ Add House</button>
+                </div>
+            </div>
+            
+            <div class="houses-list">
+                <h2>Your Houses</h2>
+                <div id="housesContainer" class="houses-grid">
+                    <!-- Houses will be dynamically added here -->
+                </div>
+                <div id="noHousesMessage" class="no-houses-message">
+                    <p>No houses added yet. Add your first house above!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Task Modal -->
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <div class="input-group">
+                <label for="taskSection">Section:</label>
+                <select id="taskSection">
+                    <option value="hall">HALL</option>
+                    <option value="portico">PORTICO</option>
+                    <option value="kitchen">KITCHEN</option>
+                    <option value="guest-room">GUEST ROOM</option>
+                    <option value="bathroom">BATHROOM</option>
+                    <option value="staircase">STAIRCASE</option>
+                    <option value="master-bedroom">MASTER BEDROOM</option>
+                    <option value="balcony">BALCONY</option>
+                    <option value="terrace">TERRACE</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" placeholder="Enter task name" />
+            </div>
+            <button id="saveTaskBtn" class="primary-btn">Save Task</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

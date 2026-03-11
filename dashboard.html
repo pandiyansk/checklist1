@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1 id="houseTitle">Dashboard for House No: </h1>
+                <p class="last-updated" id="lastUpdated">Last updated: Never</p>
+            </div>
+            <div class="header-right">
+                <button id="addTaskBtn" class="secondary-btn">+ Add Task</button>
+                <button id="backBtn" class="secondary-btn">← Back to Houses</button>
+            </div>
+        </header>
+        
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <h3 id="totalTasks">0</h3>
+                    <p>Total Tasks</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3 id="completedTasks">0</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3 id="pendingTasks">0</h3>
+                    <p>Pending</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-info">
+                    <h3 id="progressPercentage">0%</h3>
+                    <p>Progress</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Progress Section with Chart -->
+        <div class="progress-section">
+            <div class="progress-chart-container">
+                <h2>Overall Progress</h2>
+                <div class="circular-progress">
+                    <div class="progress-ring">
+                        <svg width="120" height="120">
+                            <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                            <circle id="progressCircle" class="progress-bar-circle" cx="60" cy="60" r="50"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="circularProgressText">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-progress">
+                    <h3>Section-wise Progress</h3>
+                    <div id="sectionProgressBars" class="section-bars">
+                        <!-- Section progress bars will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Checklist with Enhanced Features -->
+        <div class="checklist-container">
+            <div class="checklist-header">
+                <h2>Electrical Inspection Tasks</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            
+            <div id="checklistSections" class="sections-grid">
+                <!-- Sections will be dynamically added here -->
+            </div>
+        </div>
+        
+        <!-- Export Section -->
+        <div class="export-section">
+            <button id="downloadPDF" class="primary-btn">📄 Download Report</button>
+            <button id="clearCompleted" class="secondary-btn">🗑️ Clear Completed</button>
+        </div>
+    </div>
+    
+    <!-- Add Task Modal -->
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <div class="input-group">
+                <label for="taskSection">Section:</label>
+                <select id="taskSection">
+                    <option value="hall">HALL</option>
+                    <option value="portico">PORTICO</option>
+                    <option value="kitchen">KITCHEN</option>
+                    <option value="guest-room">GUEST ROOM</option>
+                    <option value="bathroom">BATHROOM</option>
+                    <option value="staircase">STAIRCASE</option>
+                    <option value="master-bedroom">MASTER BEDROOM</option>
+                    <option value="balcony">BALCONY</option>
+                    <option value="terrace">TERRACE</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" placeholder="Enter task name" />
+            </div>
+            <button id="saveTaskBtn" class="primary-btn">Save Task</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
